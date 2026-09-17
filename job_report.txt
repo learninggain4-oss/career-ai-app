@@ -1,0 +1,3 @@
+Score: 25.0%
+Matched: ['python', 'git']
+Missing: ['pandas', 'matplotlib', 'github', 'automation', 'data analysis', 'file handling']
