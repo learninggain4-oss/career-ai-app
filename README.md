@@ -63,7 +63,7 @@ From Thodupuzha - Learning Python for AI / Data / Automation Jobs
 GitHub: @learninggain4-oss
 
 🎯 Next
- Deploy on Streamlit Cloud for live link - 
+ Deploy on Streamlit Cloud for live link - https://career-ai-app-gnai9yva2gewjmdepxv2ey.streamlit.app/
  Telegram Bot control
  Add OpenAI API
 ⭐ Star this repo if you like my journey!
