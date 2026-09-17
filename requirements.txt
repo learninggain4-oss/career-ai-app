@@ -4,3 +4,4 @@ matplotlib
 pyTelegramBotAPI
 Flask
 python-dotenv
+groq
