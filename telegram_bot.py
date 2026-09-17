@@ -1,13 +1,18 @@
-import telebot
 import os
+from dotenv import load_dotenv
+load_dotenv() #.env file-il ninnu token edukkum
+
+import telebot
 import shutil
 import time
 import threading
 from flask import Flask
 
-# Render-il env variable, local-il paste cheytha token
-TOKEN = os.getenv("TELEGRAM_TOKEN") or "YOUR_NEW_TOKEN_HERE"
-# Laptop-il ulla path, Render-il "." aayi work aakum
+# SAFE - Token.env-il ninnu, GitHub-il pokilla
+TOKEN = os.getenv("TELEGRAM_TOKEN")
+if not TOKEN:
+    raise ValueError("TELEGRAM_TOKEN.env-il illa!.env file check cheyy")
+
 FOLDER = os.getenv("LOCAL_FOLDER") or "E:/python_practice"
 
 app = Flask(__name__)
@@ -20,8 +25,11 @@ def run_flask():
 
 bot = telebot.TeleBot(TOKEN)
 
-# Important files - ithu move aakaruth!
-IGNORE_FILES = ["requirements.txt", "README.md", "telegram_bot.py", "streamlit_app.py", ".gitignore", ".env"]
+# Move aakarutha important files
+IGNORE_FILES = [
+    "requirements.txt", "README.md", "telegram_bot.py",
+    "streamlit_app.py", ".gitignore", ".env", "app.py"
+]
 
 RULES = {
     "Images": [".png", ".jpg", ".jpeg", ".gif"],
@@ -32,7 +40,7 @@ RULES = {
 @bot.message_handler(commands=['start', 'help'])
 def start(msg):
     bot.reply_to(msg,
-        "Hi! Njan ready aanu 🚀 24/7\n\n"
+        "Hi! Njan ready aanu 🚀 24/7 SAFE mode\n\n"
         "/organize - Files organize cheyyam\n"
         "/list - Root files nokkam\n"
         "/help - Help"
@@ -66,8 +74,9 @@ def organize_files(msg):
                         except:
                             pass
                         break
+
         if moved == 0:
-            bot.reply_to(msg, "Already clean aanu! Organize cheyyan onnum illa 👌 0 files")
+            bot.reply_to(msg, "Already clean aanu! 👌 0 files")
         else:
             bot.reply_to(msg, f"Done! {moved} files organized ✅")
     except Exception as e:
@@ -91,7 +100,7 @@ def list_files(msg):
 @bot.message_handler(func=lambda message: True)
 def echo_all(msg):
     txt = msg.text.lower()
-    if "hello" in txt or "hi" in txt:
+    if "hello" in txt or "hi" in txt or "hey" in txt:
         bot.reply_to(msg, "Hello da! 😊 /organize adikku")
     elif "thanks" in txt:
         bot.reply_to(msg, "Welcome! 🙏")
@@ -100,7 +109,7 @@ def echo_all(msg):
 
 if __name__ == "__main__":
     threading.Thread(target=run_flask, daemon=True).start()
-    print("Bot + Flask started... 24/7")
+    print("Bot + Flask started... 24/7 SAFE mode")
     while True:
         try:
             bot.infinity_polling(timeout=60, long_polling_timeout=30)
