@@ -7,7 +7,7 @@
 
 > From Zero to Automated Portfolio - Built in Thodupuzha, Kerala 📍
 
-Live Demo: `streamlit run streamlit_app.py` -> http://localhost:8501
+Live Demo: `streamlit run streamlit_app.py` -> https://career-ai-app-gnai9yva2gewjmdepxv2ey.streamlit.app/
 
 ## 📌 About
 This repo contains my journey from basic Python to building automated tools that solve real problems. Each project adds a new skill - from file handling to data visualization to scheduling bots.
