@@ -25,7 +25,7 @@ def organize():
 print("Bot started - will run every day 2:44 AM. Keep this window open.")
 while True:
     now = datetime.now()
-    if now.hour == 3 and now.minute == 1:
+    if now.hour == 3 and now.minute == 49:
         organize()
         time.sleep(60) # 1 min wait to avoid repeat
     time.sleep(30)
