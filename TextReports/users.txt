@@ -1,7 +1,0 @@
-ed,23,Perfect age to start! Build projects now.
-we,13,Too young to work, but perfect to start learning!
-ty,45,45 is a great age! Experience + AI = Job Success.
-gfg,22,Perfect age for internship & skill building!
-gfg,22,Perfect age for internship & skill building!
-gfg,25,Best time for full-time job & career growth!
-gfg,24,Perfect age for internship & skill building!
